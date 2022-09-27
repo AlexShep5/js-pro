@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  background: linear-gradient(to top right, #CCCCFF, white);
+  padding: 16px 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-bar .cart-button {
+  padding: 8px 16px;
+  border: 1px solid #CCCCFF;
+  background-color: white;
+  cursor: default;
+}
+.nav-bar .cart-button:hover {
+  background-color: #66CDAA;
+  color: white;
+}
+
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.goods-list .goods-item {
+  background: linear-gradient(to top right, #F4A460, white);
+  min-width: 150px;
+  min-height: 150px;
+  margin: 16px;
+  padding: 8px;
+  text-align: center;
+}
+
+.cart-list {
+  margin-top: 100px;
+}
+.cart-list .cart-item, .cart-list .cart-total {
+  background: linear-gradient(to top left, #66CDAA, white);
+  margin: 16px;
+  padding: 8px;
+}
+.cart-list .cartItemTitle {
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */
