@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Portfolio_4</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <input type="text" class="goods-search">
+            <div class="search-button">Найти</div>
+            <div class="cart-button">Корзина</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="goods-list">
+        </div>
+        <div class="cart-list">
+        </div>
+        <div class="reg-exp">
+            <textarea class="reg-textarea" cols="50" rows="10">Дан большой текст, в котором 'для оформления прямой речи' используются одинарные кавычки. придумать шаблон, 'который заменяет одинарные кавычки на двойные'. Улучшить шаблон так, чтобы в конструкциях типа aren't 'одинарная кавычка не заменялась на двойную'.</textarea>
+            <button class="regexp-button">Исправить</button>
+        </div>
+        <form class="contact-form" action="#">
+
+            <label for="surname">Фамилия <em>*</em></label>
+            <br>
+            <input class="surname-inp" type="text" name="surname">
+            <br>
+            <label for="name">Имя <em>*</em></label>
+            <br>
+            <input class="name-inp" type="text" name="name">
+            <br>
+            <label for="name">Телефон <em>*</em></label>
+            <br>
+            <input class="phone-inp" type="text" name="phone">
+            <br>
+            <label for="email">E-mail <em>*</em></label>
+            <br>
+            <input class="email-inp" type="text" name="email">
+            <br>
+            <p>
+                <button class="submit-btn" type="submit">Отправить</button>
+            </p>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
