@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Portfolio_4</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="nav-bar">
+                <input type="text" class="goods-search" v-model="searchLine">
+                <div class="search-button" @click="filterClickHandler">Найти</div>
+                <div class="cart-button" @click="cartVisibleClickHandler">Корзина</div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Товары -->
+            <div v-if="goods.length > 0" class="goods-list" @click="cartAddClickHandler">
+                <div v-for="good in filteredGoods">
+                    <div class="goods-item">
+                        <h3>{{ good.product_name }}</h3>
+                        <p>{{ good.price }} руб </p>
+                        <div class="add-button" v-bind:data-id="good.id_product">В корзину</div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="goods-list goods-empty">
+                <h2>Список товаров пуст</h2>
+            </div>
+
+            <!-- Корзина -->
+            <div v-if="isVisibleCart" class="cart-list" @click="cartRemoveClickHandler">
+                <div v-for="cartItem in cartList" class="cart-item">
+                    <p class="cartItemTitle">Наименование: {{ cartItem.product_name }}</p>
+                    <p>Цена: {{ cartItem.price }} руб</p>
+                    <p>Кол-во: {{ cartItem.quantity }}</p>
+                    <div class="remove-btn" v-bind:data-id="cartItem.id_product">Удалить</div>
+                </div>
+                <!-- Total -->
+                <div class="cart-total">
+                    <div>В корзине {{ totalCount }} товара(-ов) на сумму {{ totalPrice }} руб</div>
+                    <div class="clear-button" @click="cartClearClickHandler">Очистить</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
