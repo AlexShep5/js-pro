@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Portfolio_4</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="nav-bar">
+                <!-- Поиск -->
+                <goods-search v-model="searchLine" @filter-goods="filterGoods"></goods-search>
+                <div class="cart-button" @click="cartVisible">Корзина</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main">
+                <!-- Ошибка соединения -->
+                <error-connect :visible="isError"></error-connect>
+
+                <!-- Товары -->
+                <goods-list :goods="filteredGoods" @add-product="addCartItem"></goods-list>
+
+                <!-- Корзина -->
+                <cart-list :items="cartList" :visible="isVisibleCart"
+                @remove-item="removeCartItem"></cart-list>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
